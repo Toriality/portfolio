@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: url("./assets/cursor.png"), default;
+  font-family: "Roboto", sans-serif;
+}
+
+button,
+a,
+img {
+  cursor: url("./assets/cursor_pointer.png"), pointer;
+}
+
+.dark {
+  @apply bg-gray-900 bg-blend-multiply;
+}
+
+.light {
+  @apply bg-violet-200 bg-blend-screen;
+}
+
+.dark .lime-text {
+  @apply text-lime-500;
+}
+
+.light .lime-text {
+  @apply text-lime-600;
+}
+
+.dark .small-text {
+  @apply opacity-15;
+}
+
+.light .small-text {
+  @apply text-violet-600 opacity-50;
+}
+
+.light .pages-list-item {
+  @apply border-2 border-violet-600 group-hover:text-lime-600;
+}
+
+.light .pages-list-bg {
+  @apply bg-stone-400 mix-blend-plus-lighter backdrop-blur-sm;
+}
+
+.dark .pages-list-bg {
+  @apply bg-black/50;
+}
+
+.light .pages-list-text {
+  @apply text-violet-600 group-hover:text-lime-600;
+}
+
+.dark .link {
+  @apply text-white;
+}
+
+.light .link {
+  @apply text-violet-600;
+}
+
+.light .social-icons {
+  @apply text-violet-600 border-violet-600 hover:border-lime-600;
+}
+
+.light .button-stylized {
+  @apply bg-violet-600 hover:border-lime-600 hover:text-lime-600;
+}
+
+.light .clipboard {
+  @apply bg-violet-400;
+}
+
+.light .home-button {
+  @apply border-violet-400 text-violet-400 bg-white hover:text-lime-300 hover:border-lime-300;
+}
+
+.light .wildflower {
+  @apply bg-white/50;
+}
+
+.dark .wildflower {
+  @apply bg-black/50;
+}
+
+.light .wildflower-text {
+  @apply text-lime-600 bg-white/60 py-4 px-8 rounded-lg;
+}
+
+.light .project-image {
+  @apply shadow-lime-600/50 border-lime-600/50 hover:shadow-violet-600/50 hover:border-violet-600/50;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 32ch;
+  }
+  100% {
+    width: 32ch;
+  }
+}
+
+.typing-effect {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(40, end) forwards;
+}
+
+.mouse-trail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.mouse-trail {
+  position: absolute;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  animation: fadeOut 0.5s linear forwards;
+}
+
+@keyframes notification {
+  from {
+    transform: translateY(+100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.notification {
+  animation: notification 0.2s linear forwards;
+}
